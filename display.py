@@ -87,17 +87,13 @@ class Display(object):
         Thread(target=self.start)
 
     def start(self):
-        try:
-            while self.running:
-                for i, c in enumerate(self.value, 1):
-                    char_on(c)
-                    position_on(i)
-                    sleep(0.002)
-                    position_off(i)
-                    clear_segments()
-
-        except KeyboardInterrupt:
-            IO.cleanup()
+        while self.running:
+            for i, c in enumerate(self.value, 1):
+                char_on(c)
+                position_on(i)
+                sleep(0.002)
+                position_off(i)
+                clear_segments()
 
     def set(self, x):
         if len(str(x)) > 4:

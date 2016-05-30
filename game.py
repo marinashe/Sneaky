@@ -4,7 +4,7 @@ import RPi.GPIO as IO
 from display import Display
 
 button = 16
-led = 19
+led = 15
 
 
 def high(pin):
