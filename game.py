@@ -1,3 +1,4 @@
+from random import random, randrange
 from threading import Thread
 from time import sleep
 import RPi.GPIO as IO
@@ -20,6 +21,7 @@ class Game(object):
         self.counter = 0
         self.led = False
         self.display = display
+        self.running = True
         IO.setup(button, IO.IN, pull_up_down=IO.PUD_UP)
         IO.setup(led, IO.OUT)
 
@@ -28,12 +30,13 @@ class Game(object):
             print('Toggle')
 
         IO.add_event_detect(button, IO.BOTH, toggle_callback, bouncetime=1000)
+        Thread(target=self.comp_start).start()
 
     def timer_plus(self):
-        self.counter += 0.03
+        self.counter += 0.5
 
     def timer_minus(self):
-        self.counter -= 0.1
+        self.counter -= 0.5
 
     def toggle(self):
         self.led = not self.led
@@ -56,7 +59,22 @@ class Game(object):
                 print(int(self.counter))
                 sleep(0.2)
         except KeyboardInterrupt:
+            self.comp_stop()
+            self.display.stop()
             IO.cleanup()
+
+    def comp_start(self):
+        while self.running:
+            sleep(randrange(1, 3))
+            if not self.led:
+                self.toggle()
+                if random() > 0.8:
+                    sleep(0.5)
+                    self.toggle()
+
+    def comp_stop(self):
+        self.running = False
+
 
 
 IO.setmode(IO.BOARD)
