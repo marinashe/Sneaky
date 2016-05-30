@@ -29,7 +29,7 @@ class Game(object):
             self.toggle()
             print('Toggle')
 
-        IO.add_event_detect(button, IO.BOTH, toggle_callback, bouncetime=1000)
+        IO.add_event_detect(button, IO.BOTH, toggle_callback, bouncetime=300)
         Thread(target=self.comp_start).start()
 
     def timer_plus(self):
@@ -65,7 +65,7 @@ class Game(object):
 
     def comp_start(self):
         while self.running:
-            sleep(randrange(1, 10))
+            sleep(randrange(1, 5))
             if not self.led:
                 self.toggle()
                 if random() > 0.8:
