@@ -84,7 +84,7 @@ class Display(object):
             IO.setup(pin, IO.OUT)
         for pin in positions.values():
             high(pin)
-        Thread(target=self.start)
+        Thread(target=self.start).start()
 
     def start(self):
         while self.running:
