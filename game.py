@@ -33,7 +33,7 @@ class Game(object):
         self.counter += 0.03
 
     def timer_minus(self):
-        self.counter -= 0.03
+        self.counter -= 0.1
 
     def toggle(self):
         self.led = not self.led
