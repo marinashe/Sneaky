@@ -33,7 +33,7 @@ class Game(object):
         Thread(target=self.comp_start).start()
 
     def timer_plus(self):
-        self.counter += 0.5
+        self.counter += 0.8
 
     def timer_minus(self):
         self.counter -= 1
@@ -65,7 +65,7 @@ class Game(object):
 
     def comp_start(self):
         while self.running:
-            sleep(randrange(1, 3))
+            sleep(randrange(1, 10))
             if not self.led:
                 self.toggle()
                 if random() > 0.8:
