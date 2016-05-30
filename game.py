@@ -25,6 +25,7 @@ class Game(object):
 
         def toggle_callback(channel):
             self.toggle()
+            print('Toggle')
 
         IO.add_event_detect(button, IO.BOTH, toggle_callback, bouncetime=1000)
 
@@ -38,10 +39,13 @@ class Game(object):
         self.led = not self.led
         if self.led:
             high(led)
+            print('Led on')
         else:
             low(led)
+            print('Led off')
 
     def start(self):
+        print('Start game')
         try:
             while True:
                 if self.led:
@@ -49,6 +53,7 @@ class Game(object):
                 else:
                     self.timer_plus()
                 self.display.set(int(self.counter))
+                print(int(self.counter))
                 sleep(0.2)
         except KeyboardInterrupt:
             IO.cleanup()
