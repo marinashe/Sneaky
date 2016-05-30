@@ -49,7 +49,7 @@ class Game(object):
                 else:
                     self.timer_plus()
                 self.display.set(int(self.counter))
-
+                sleep(0.2)
         except KeyboardInterrupt:
             IO.cleanup()
 
