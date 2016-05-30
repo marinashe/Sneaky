@@ -101,7 +101,7 @@ class Display(object):
 
     def set(self, x):
         if len(str(x)) > 4:
-            raise ValueError('Invalid value for display.')
+            raise ValueError('Invalid value for display: {}'.format(x))
         self.value = str(x).ljust(4, ' ')
 
     def stop(self):
