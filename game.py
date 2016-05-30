@@ -29,11 +29,11 @@ class Game(object):
             self.toggle()
             print('Toggle')
 
-        IO.add_event_detect(button, IO.BOTH, toggle_callback, bouncetime=300)
+        IO.add_event_detect(button, IO.BOTH, toggle_callback, bouncetime=100)
         Thread(target=self.comp_start).start()
 
     def timer_plus(self):
-        self.counter += 0.8
+        self.counter += 0.5
 
     def timer_minus(self):
         self.counter -= 1
