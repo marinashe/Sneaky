@@ -24,5 +24,12 @@ Beware... Sometimes it will try to trick you to make you turn it on...
 
 ## The board
  ![alt tag](https://raw.githubusercontent.com/marinashe/Sneaky/master/media/board.jpg)
+
  
- You can check out some videos here: https://github.com/marinashe/Sneaky/blob/master/media
+## Videos 
+ 
+ 
+  https://www.youtube.com/watch?v=yedPoMH8BTM
+
+
+  https://www.youtube.com/watch?v=vaDmj0_-fOU
