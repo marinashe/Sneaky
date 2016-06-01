@@ -23,7 +23,9 @@ Beware... Sometimes it will try to trick you to make you turn it on...
  
 
 ## The board
- ![alt tag](https://raw.githubusercontent.com/marinashe/Sneaky/master/media/board.jpg)
+ <img src="https://raw.githubusercontent.com/marinashe/Sneaky/master/media/board.jpg" width="700">
+ 
+ <img src="https://raw.githubusercontent.com/marinashe/Sneaky/master/media/circuit.png" width="700">
 
  
 ## Videos 
